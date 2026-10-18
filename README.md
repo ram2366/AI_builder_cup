@@ -1,14 +1,14 @@
-# Landsight
+# GeoMind
 
 **Every place has a history. Now, you can read it.**
 
-Landsight is satellite-powered due diligence for land buyers, home buyers, planners and small developers. Search for a plot, drop a pin, draw its boundary or import KML/GeoJSON. Landsight turns decades of public Earth observation into a plain-language report about historical water, wet-season flooding, terrain, land-cover change and land health. It also offers a separate **Locality Lens** for nearby amenities and source-linked community opinion.
+GeoMind is satellite-powered due diligence for land buyers, home buyers, planners and small developers. Search for a plot, drop a pin, draw its boundary or import KML/GeoJSON. GeoMind turns decades of public Earth observation into a plain-language report about historical water, wet-season flooding, terrain, land-cover change and land health. It also offers a separate **Locality Lens** for nearby amenities and source-linked community opinion.
 
 Built for the **Google Cloud AI Builder Cup 2026** · Sustainability & Social Impact.
 
 ## Live demo
 
-**[Open Landsight](https://sampaaa-130242409804.asia-south1.run.app/)**
+**[Open GeoMind](https://sampaaa-130242409804.asia-south1.run.app/)**
 
 The landing page has four one-click examples:
 
@@ -19,9 +19,9 @@ The landing page has four one-click examples:
 
 Click any example and wait for the live evidence and Gemini investigation to finish. You can also search an address, choose **Draw / import**, and either draw the plot on the map or import a KML/GeoJSON polygon. Switch to **Locality & Life** to see amenities, a transparent liveability score and grounded community sources.
 
-Live reports usually take roughly 30–90 seconds because Landsight queries Earth Engine and runs verification in real time.
+Live reports usually take roughly 30–90 seconds because GeoMind queries Earth Engine and runs verification in real time.
 
-## What Landsight does
+## What GeoMind does
 
 - Reconstructs surface-water history from 1984 onward and highlights seasonal or former water presence.
 - Selects the six locally wettest months from CHIRPS climatology, checks those seasons, and uses Sentinel-1 radar for flood follow-up through cloud cover.
@@ -34,7 +34,7 @@ Live reports usually take roughly 30–90 seconds because Landsight queries Eart
 - Ranks the most important findings first, verifies every generated claim against the evidence pack, and keeps clear results compact.
 - Finds nearby transit, groceries, healthcare, schools, dining and parks in a separate Locality Lens, with optional commute, air-quality, and 1 km neighbourhood heat/green checks.
 
-Landsight helps a buyer understand what to investigate next. It is not a replacement for title verification, a lawyer, a surveyor, a drainage engineer or a site visit after heavy rain.
+GeoMind helps a buyer understand what to investigate next. It is not a replacement for title verification, a lawyer, a surveyor, a drainage engineer or a site visit after heavy rain.
 
 ## How it works
 
@@ -137,7 +137,7 @@ cd frontend && npx tsc -b --noEmit
 
 ## Honest limitations
 
-- Landsight describes observed history; it does not predict future floods, temperatures or development.
+- GeoMind describes observed history; it does not predict future floods, temperatures or development.
 - It does **not** check title, encumbrances, ownership, zoning, approvals, RERA registration, soil bearing capacity or construction quality.
 - FABDEM is a 30 m terrain model, not a site survey. MERIT HAND is 90 m regional drainage context; neither resolves engineered plot grading.
 - Open Buildings covers 2016–2023 in supported regions. Its first detection is not an exact construction date, and small or obscured buildings can be missed.
@@ -153,8 +153,8 @@ cd frontend && npx tsc -b --noEmit
 - Imported boundaries are limited to Polygon geometry, 200 vertices and 200 m²–2 km². MultiPolygon imports use one polygon.
 - Live analysis can take 30–90 seconds and depends on external service availability and quota.
 
-Use Landsight as an evidence-backed starting point, then verify important decisions through official records and qualified local professionals.
+Use GeoMind as an evidence-backed starting point, then verify important decisions through official records and qualified local professionals.
 
 ---
 
-**Future direction:** Landsight's shared geospatial intelligence foundation could later support additional applications such as **Farm Health** and **Site Intelligence**. These are proposed extensions, not capabilities claimed as live in the current demo.
+**Future direction:** GeoMind's shared geospatial intelligence foundation could later support additional applications such as **Farm Health** and **Site Intelligence**. These are proposed extensions, not capabilities claimed as live in the current demo.
