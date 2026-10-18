@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<title>SAMPAAA · Direction A · Editorial story</title>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#121110; --ink:#ECE8E1; --ink2:#A39E95; --ink3:#6F6A62; --rule:rgba(236,232,225,.11);
+    --rose:#E58A92; --water:#8DB4E8; --flood:#B9A3E3; --sage:#9CC5A8;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{width:1440px;height:900px;display:flex;background:var(--bg);color:var(--ink);font-family:Inter,sans-serif;-webkit-font-smoothing:antialiased;overflow:hidden}
+  .serif{font-family:"Instrument Serif",serif;font-weight:400}
+  .col{width:660px;height:900px;overflow:hidden;padding:0 56px;display:flex;flex-direction:column}
+  .top{display:flex;align-items:center;justify-content:space-between;height:68px;border-bottom:1px solid var(--rule);font-size:12.5px;color:var(--ink2)}
+  .brand{font-family:"Instrument Serif";font-size:22px;color:var(--ink);letter-spacing:.02em}
+  .nav{display:flex;gap:26px;margin-top:22px;font-size:13.5px;color:var(--ink3)}
+  .nav span.on{color:var(--ink);border-bottom:1px solid var(--ink);padding-bottom:6px}
+  .kicker{margin-top:28px;font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink3)}
+  h1{font-size:56px;line-height:1.02;letter-spacing:-.01em;margin-top:14px}
+  h1 em{font-style:italic;color:var(--rose)}
+  .lede{font-size:16px;line-height:1.6;color:var(--ink2);margin-top:16px;max-width:520px}
+  .verdict{display:flex;align-items:center;gap:18px;margin-top:22px;font-size:13px;color:var(--ink2)}
+  .verdict b{color:var(--rose);font-weight:600;letter-spacing:.04em}
+  .chart{margin-top:22px;position:relative}
+  .chart .lab{position:absolute;font-size:12px;color:var(--ink2);line-height:1.35}
+  .chart .lab strong{display:block;color:var(--ink);font-weight:500}
+  .axis{display:flex;justify-content:space-between;font-size:11px;color:var(--ink3);margin-top:8px;font-variant-numeric:tabular-nums}
+  .stats{display:grid;grid-template-columns:1fr 1fr;margin-top:18px;border-top:1px solid var(--rule)}
+  .stat{padding:14px 0 12px;border-bottom:1px solid var(--rule)}
+  .stat:nth-child(odd){padding-right:28px;border-right:1px solid var(--rule)}
+  .stat:nth-child(even){padding-left:28px}
+  .stat .n{font-family:"Instrument Serif";font-size:38px;line-height:1}
+  .stat .t{font-size:13px;color:var(--ink2);margin-top:6px;line-height:1.45}
+  .stat .r{font-size:11px;letter-spacing:.12em;text-transform:uppercase;margin-top:8px}
+  .map{flex:1;position:relative;background:url(assets/plot-wide.jpg) center/cover;filter:saturate(.55) contrast(1.05) brightness(.82)}
+  .map::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(18,17,16,.85),rgba(18,17,16,0) 18%)}
+  .ring{position:absolute;left:58%;top:46%;width:300px;height:300px;margin:-150px 0 0 -150px;border-radius:50%;border:1.5px solid rgba(236,232,225,.9);box-shadow:0 0 0 1px rgba(0,0,0,.3)}
+  .ring::before{content:"";position:absolute;inset:-14px;border-radius:50%;border:1px dashed rgba(236,232,225,.35)}
+  .water{position:absolute;left:47%;top:31%;width:220px;height:170px;border-radius:52% 48% 44% 56%;background:rgba(141,180,232,.32);filter:blur(1px)}
+  .dot{position:absolute;left:58%;top:46%;width:12px;height:12px;margin:-6px 0 0 -6px;border-radius:50%;background:var(--ink);box-shadow:0 0 0 6px rgba(236,232,225,.18)}
+  .maplabel{position:absolute;font-size:12px;color:var(--ink);background:rgba(18,17,16,.72);padding:6px 10px;border-radius:4px;line-height:1.35}
+  .maplabel span{color:var(--ink2)}
+  .legend{position:absolute;right:28px;bottom:28px;font-size:12px;color:var(--ink2);display:flex;flex-direction:column;gap:8px;background:rgba(18,17,16,.72);padding:12px 14px;border-radius:4px}
+  .legend i{display:inline-block;width:18px;height:3px;margin-right:8px;vertical-align:middle}
+  .tag{position:absolute;left:28px;top:24px;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink2)}
+</style></head><body>
+<div class="col">
+  <div class="top"><span class="brand">Sampaaa</span><span>Report SP-EE6D35 · 14 Oct 2026 · Share · Save · PDF</span></div>
+  <div class="nav"><span class="on">The story</span><span>What to do</span><span>Timeline</span><span>Ask</span><span>Sources</span></div>
+
+  <p class="kicker">Bellandur · Bengaluru East · 250 m around the pin</p>
+  <h1 class="serif">This land was a lake.<br><em>It has flooded since.</em></h1>
+  <p class="lede">For three decades this spot held water every monsoon. It was filled and built on after 2012, and the area flooded again in September 2022.</p>
+  <div class="verdict"><b>● HIGH PHYSICAL RISK</b><span>10 of 10 facts checked against satellite records</span><span>Demo data</span></div>
+
+  <div class="chart">
+    <svg id="c" width="548" height="150"></svg>
+    <div class="lab" style="left:24px;top:2px"><strong>Seasonal lake</strong>1984 – 2011</div>
+    <div class="lab" style="left:384px;top:-2px"><strong>Filled in</strong>2012 – 2018</div>
+    <div class="lab" style="left:420px;top:62px;text-align:right;width:84px"><strong style="color:var(--flood)">Flooded</strong>Sep 2022</div>
+    <div class="axis"><span>1984</span><span>1990</span><span>2000</span><span>2010</span><span>2020</span><span>2025</span></div>
+  </div>
+
+  <div class="stats">
+    <div class="stat"><div class="n serif">46%</div><div class="t">of satellite observations show water on this plot since 1984</div><div class="r" style="color:var(--rose)">Former lake</div></div>
+    <div class="stat"><div class="n serif">4 of 9</div><div class="t">recent monsoons left standing water inside the circle</div><div class="r" style="color:var(--rose)">Floods often</div></div>
+    <div class="stat"><div class="n serif">2.4 m</div><div class="t">above the nearest drain, lower than 81% of the land around</div><div class="r" style="color:#E8B08A">Low-lying</div></div>
+    <div class="stat"><div class="n serif">53 → 25%</div><div class="t">green cover lost since 2016 as the layout was built</div><div class="r" style="color:#E8B08A">Greenery lost</div></div>
+  </div>
+</div>
+
+<div class="map">
+  <div class="water"></div>
+  <div class="ring"></div>
+  <div class="dot"></div>
+  <span class="tag">Satellite · 2025</span>
+  <div class="maplabel" style="left:28%;top:22%">Lake extent, 2009<br><span>JRC Surface Water</span></div>
+  <div class="maplabel" style="left:62%;top:66%">Your plot<br><span>12.9505 N, 77.7005 E</span></div>
+  <div class="legend"><span><i style="background:var(--water)"></i>Historic water</span><span><i style="background:var(--flood)"></i>2022 flood</span><span><i style="background:var(--ink)"></i>Analysis area</span></div>
+</div>
+
+<script>
+  // Illustrative 40-year water share (demo), drawn as a calm area chart.
+  const ys=[];for(let y=1984;y<=2025;y++)ys.push(y);
+  const v=ys.map(y=>{ if(y<2012) return .4+.03*Math.sin(y*0.9)+.015*Math.sin(y*2.3); if(y<=2021) return Math.max(.03,.42-(y-2011)*.045); return y===2022?.12:.025; });
+  const W=548,H=150,yTop=36,bot=140,max=.5;
+  const x=i=>i/(ys.length-1)*W, y=val=>bot-(val/max)*(bot-yTop);
+  let d=`M0,${bot}`;ys.forEach((_,i)=>d+=` L${x(i).toFixed(1)},${y(v[i]).toFixed(1)}`);d+=` L${W},${bot} Z`;
+  let line='';ys.forEach((_,i)=>line+=`${i?'L':'M'}${x(i).toFixed(1)},${y(v[i]).toFixed(1)} `);
+  const fi=ys.indexOf(2022);
+  document.getElementById('c').innerHTML=`
+    <defs><linearGradient id="g" x1="0" x2="0" y1="0" y2="1"><stop offset="0" stop-color="#8DB4E8" stop-opacity=".45"/><stop offset="1" stop-color="#8DB4E8" stop-opacity="0"/></linearGradient></defs>
+    <line x1="0" x2="${W}" y1="${bot}" y2="${bot}" stroke="rgba(236,232,225,.15)"/>
+    <path d="${d}" fill="url(#g)"/><path d="${line}" fill="none" stroke="#8DB4E8" stroke-width="1.6"/>
+    <line x1="${x(fi)}" x2="${x(fi)}" y1="${y(v[fi])}" y2="${bot}" stroke="#B9A3E3" stroke-dasharray="2 3"/>
+    <circle cx="${x(fi)}" cy="${y(v[fi])}" r="4" fill="#B9A3E3"/>
+    <line x1="${x(ys.indexOf(2012))}" x2="${x(ys.indexOf(2012))}" y1="${yTop-6}" y2="${bot}" stroke="rgba(236,232,225,.25)" stroke-dasharray="2 3"/>`;
+</script>
+</body></html>

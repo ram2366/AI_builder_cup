@@ -1,0 +1,100 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1600" viewBox="0 0 1600 1600">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop stop-color="#071116"/>
+      <stop offset="1" stop-color="#0b1820"/>
+    </linearGradient>
+    <linearGradient id="teal" x1="0" y1="0" x2="1" y2="1">
+      <stop stop-color="#66f2dc"/>
+      <stop offset="1" stop-color="#19bfae"/>
+    </linearGradient>
+    <linearGradient id="blue" x1="0" y1="0" x2="1" y2="1">
+      <stop stop-color="#7ad7ff"/>
+      <stop offset="1" stop-color="#2dd4bf"/>
+    </linearGradient>
+    <filter id="glow" x="-40%" y="-40%" width="180%" height="180%">
+      <feGaussianBlur stdDeviation="7" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <style>
+      .card{fill:#0d1b22;stroke:#20353d;stroke-width:2}.num{fill:#77a3ad;font:600 20px Inter,Arial,sans-serif;letter-spacing:3px}.name{fill:#f2faf9;font:700 54px Inter,Arial,sans-serif;letter-spacing:-2px}.title{fill:#f2faf9;font:700 26px Inter,Arial,sans-serif}.copy{fill:#9ab1b7;font:400 19px Inter,Arial,sans-serif}.tag{fill:#2dd4bf;font:600 16px Inter,Arial,sans-serif;letter-spacing:2px}.line{fill:none;stroke:url(#teal);stroke-linecap:round;stroke-linejoin:round}.soft{fill:none;stroke:#31515a;stroke-linecap:round;stroke-linejoin:round}
+    </style>
+  </defs>
+  <rect width="1600" height="1000" fill="url(#bg)"/>
+  <text x="80" y="76" fill="#f2faf9" font-family="Inter,Arial,sans-serif" font-size="34" font-weight="700">GeoMind — logo directions</text>
+  <text x="80" y="112" fill="#809ba3" font-family="Inter,Arial,sans-serif" font-size="18">Original vector concepts · global, evidence-led, professional</text>
+
+  <!-- A: Contour G -->
+  <g transform="translate(70 155)">
+    <rect class="card" width="710" height="360" rx="28"/>
+    <text class="num" x="34" y="48">OPTION A</text>
+    <g transform="translate(42 92)">
+      <circle cx="93" cy="93" r="78" fill="#0a151b" stroke="#20353d" stroke-width="2"/>
+      <path class="line" stroke-width="8" d="M144 42a72 72 0 1 0 0 102l-24-24"/>
+      <path class="line" stroke-width="6" opacity=".72" d="M129 58a50 50 0 1 0 3 68"/>
+      <path class="line" stroke-width="4" opacity=".46" d="M113 74a28 28 0 1 0 2 38"/>
+      <path class="line" stroke-width="7" d="M102 111h45v37"/>
+      <circle cx="147" cy="148" r="8" fill="#66f2dc" filter="url(#glow)"/>
+    </g>
+    <text class="name" x="258" y="175">GeoMind</text>
+    <text class="tag" x="260" y="207">CONTOUR G</text>
+    <text class="title" x="258" y="258">The land becomes an answer.</text>
+    <text class="copy" x="258" y="292">A “G” built from topographic contours,</text>
+    <text class="copy" x="258" y="319">ending in one verified point of insight.</text>
+  </g>
+
+  <!-- B: Geo Pulse -->
+  <g transform="translate(820 155)">
+    <rect class="card" width="710" height="360" rx="28"/>
+    <text class="num" x="34" y="48">OPTION B</text>
+    <g transform="translate(42 92)">
+      <rect x="0" y="0" width="186" height="186" rx="52" fill="#0a151b" stroke="#20353d" stroke-width="2"/>
+      <path class="soft" stroke-width="3" d="M28 126c30-22 53-17 74-34s32-47 56-52"/>
+      <path class="line" stroke-width="5" opacity=".55" d="M28 144c35-25 59-17 82-37s29-45 48-50"/>
+      <path class="line" stroke-width="7" d="M28 162c40-29 67-17 91-41s25-43 39-48"/>
+      <path d="M25 95h28l10-24 18 48 18-62 17 38h45" fill="none" stroke="#7ad7ff" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+      <circle cx="116" cy="95" r="8" fill="#66f2dc" filter="url(#glow)"/>
+    </g>
+    <text class="name" x="258" y="175">GeoMind</text>
+    <text class="tag" x="260" y="207">GEO PULSE</text>
+    <text class="title" x="258" y="258">Read the signal beneath a place.</text>
+    <text class="copy" x="258" y="292">Terrain layers crossed by an evidence pulse:</text>
+    <text class="copy" x="258" y="319">history measured, not guessed.</text>
+  </g>
+
+  <!-- C: Meridian Mind -->
+  <g transform="translate(70 555)">
+    <rect class="card" width="710" height="360" rx="28"/>
+    <text class="num" x="34" y="48">OPTION C</text>
+    <g transform="translate(42 92)">
+      <circle cx="93" cy="93" r="78" fill="#0a151b" stroke="#20353d" stroke-width="2"/>
+      <circle cx="93" cy="93" r="60" class="line" stroke-width="5"/>
+      <path class="line" stroke-width="4" opacity=".62" d="M93 33c-24 20-32 39-32 60s8 40 32 60M93 33c24 20 32 39 32 60s-8 40-32 60M35 93h116"/>
+      <path d="M51 120 76 87l20 20 35-48" fill="none" stroke="#7ad7ff" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
+      <circle cx="131" cy="59" r="9" fill="#66f2dc" filter="url(#glow)"/>
+    </g>
+    <text class="name" x="258" y="175">GeoMind</text>
+    <text class="tag" x="260" y="207">MERIDIAN MIND</text>
+    <text class="title" x="258" y="258">Local truth, global intelligence.</text>
+    <text class="copy" x="258" y="292">Meridians establish global reach; the rising</text>
+    <text class="copy" x="258" y="319">terrain path leads to a precise evidence node.</text>
+  </g>
+
+  <!-- D: Parcel Prism -->
+  <g transform="translate(820 555)">
+    <rect class="card" width="710" height="360" rx="28"/>
+    <text class="num" x="34" y="48">OPTION D</text>
+    <g transform="translate(42 92)">
+      <rect x="0" y="0" width="186" height="186" rx="52" fill="#0a151b" stroke="#20353d" stroke-width="2"/>
+      <path class="line" stroke-width="6" d="m38 76 55-33 55 33-55 33z"/>
+      <path class="line" stroke-width="5" opacity=".7" d="m38 102 55 33 55-33M38 128l55 33 55-33"/>
+      <path class="soft" stroke-width="3" d="M38 76v52M148 76v52M93 109v52"/>
+      <path d="m132 36 4 12 12 4-12 4-4 12-4-12-12-4 12-4z" fill="#7ad7ff" filter="url(#glow)"/>
+    </g>
+    <text class="name" x="258" y="175">GeoMind</text>
+    <text class="tag" x="260" y="207">PARCEL PRISM</text>
+    <text class="title" x="258" y="258">One plot. Many layers of truth.</text>
+    <text class="copy" x="258" y="292">A parcel lifted through time, revealing the</text>
+    <text class="copy" x="258" y="319">evidence layers hidden beneath today’s view.</text>
+  </g>
+</svg>

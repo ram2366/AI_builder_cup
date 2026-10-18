@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<title>SAMPAAA · Direction C · Warm consumer</title>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{--bg:#FBF8F3;--card:#FFFFFF;--ink:#1E2A2F;--ink2:#5D6A6F;--ink3:#93A0A4;--line:#EEE8DE;--terra:#D0603E;--terraSoft:#FBEDE6;--sage:#4E8C72;--sageSoft:#E8F2EC;--sky:#4C86C6;--skySoft:#E7F0FA;--sand:#C9952F;--sandSoft:#FBF2DF}
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{width:1440px;height:900px;display:flex;background:var(--bg);color:var(--ink);font-family:"Plus Jakarta Sans",sans-serif;-webkit-font-smoothing:antialiased;overflow:hidden}
+  .col{width:660px;height:900px;overflow:hidden;padding:20px 32px 0;display:flex;flex-direction:column}
+  .top{display:flex;align-items:center;gap:12px}
+  .logo{display:flex;align-items:center;gap:8px;font-weight:800;font-size:18px;letter-spacing:-.02em}
+  .logo span{width:28px;height:28px;border-radius:9px;background:var(--ink);display:grid;place-items:center;color:#FBF8F3;font-size:14px}
+  .pill{border:1px solid var(--line);background:var(--card);border-radius:999px;padding:8px 14px;font-size:13px;font-weight:600;color:var(--ink2)}
+  .hero{margin-top:18px;border-radius:22px;overflow:hidden;position:relative;height:220px;box-shadow:0 12px 30px rgba(30,42,47,.12)}
+  .hero .before,.hero .after{position:absolute;inset:0;background:url(assets/plot.jpg) center/cover}
+  .hero .before{clip-path:inset(0 50% 0 0);filter:saturate(.8)}
+  .hero .before::after{content:"";position:absolute;left:18%;top:20%;width:46%;height:58%;border-radius:50% 46% 52% 48%;background:rgba(76,134,198,.55)}
+  .hero .handle{position:absolute;left:50%;top:0;bottom:0;width:3px;background:#fff;margin-left:-1.5px}
+  .hero .knob{position:absolute;left:50%;top:50%;width:38px;height:38px;margin:-19px 0 0 -19px;border-radius:50%;background:#fff;display:grid;place-items:center;font-weight:800;color:var(--ink);box-shadow:0 4px 12px rgba(0,0,0,.25)}
+  .hero .yr{position:absolute;top:14px;padding:5px 10px;border-radius:999px;background:rgba(255,255,255,.92);font-size:12px;font-weight:700}
+  .hero .cap{position:absolute;left:14px;bottom:12px;color:#fff;font-size:12px;font-weight:600;text-shadow:0 1px 4px rgba(0,0,0,.6)}
+  h1{font-size:28px;font-weight:800;letter-spacing:-.02em;margin-top:20px}
+  .sub{font-size:13.5px;color:var(--ink2);margin-top:2px}
+  .banner{margin-top:14px;display:flex;gap:14px;align-items:flex-start;padding:16px 18px;border-radius:18px;background:var(--terraSoft)}
+  .banner .ic{width:40px;height:40px;border-radius:12px;background:var(--terra);display:grid;place-items:center;flex-shrink:0}
+  .banner h2{font-size:17px;font-weight:800;color:#8E3A21}
+  .banner p{font-size:13.5px;color:#7A4A3A;margin-top:3px;line-height:1.5}
+  .facts{margin-top:16px;display:flex;flex-direction:column;gap:10px}
+  .fact{display:flex;align-items:center;gap:14px;padding:12px 14px;background:var(--card);border-radius:16px;box-shadow:0 1px 0 var(--line),0 6px 16px rgba(30,42,47,.05)}
+  .fact .ic{width:42px;height:42px;border-radius:13px;display:grid;place-items:center;flex-shrink:0}
+  .fact h3{font-size:15px;font-weight:700}
+  .fact p{font-size:12.5px;color:var(--ink2);margin-top:1px}
+  .fact .see{margin-left:auto;font-size:12.5px;font-weight:700;color:var(--ink3);white-space:nowrap}
+  .cta{display:grid;grid-template-columns:1.2fr 1fr;gap:10px;margin-top:16px}
+  .cta div{height:50px;border-radius:999px;display:grid;place-items:center;font-weight:700;font-size:14.5px}
+  .trust{margin-top:12px;font-size:12px;color:var(--ink3);text-align:center}
+  .map{flex:1;position:relative;padding:20px 20px 20px 0}
+  .mapin{position:relative;height:100%;border-radius:26px;overflow:hidden;background:url(assets/plot-wide.jpg) center/cover;box-shadow:0 20px 50px rgba(30,42,47,.18)}
+  .ring{position:absolute;left:58%;top:46%;width:290px;height:290px;margin:-145px 0 0 -145px;border-radius:50%;border:3px solid #fff;background:rgba(255,255,255,.08);box-shadow:0 0 0 6px rgba(208,96,62,.35)}
+  .pin{position:absolute;left:58%;top:46%;transform:translate(-50%,-100%)}
+  .chip{position:absolute;background:#fff;border-radius:999px;padding:8px 14px;font-size:12.5px;font-weight:700;box-shadow:0 6px 18px rgba(0,0,0,.18);display:flex;align-items:center;gap:8px}
+  .mapctl{position:absolute;right:16px;top:16px;display:flex;gap:6px}
+  .mapctl span{background:#fff;border-radius:999px;padding:7px 12px;font-size:12px;font-weight:700;box-shadow:0 4px 12px rgba(0,0,0,.15)}
+</style></head><body>
+<div class="col">
+  <div class="top"><div class="logo"><span>S</span>sampaaa</div><div style="margin-left:auto;display:flex;gap:8px"><span class="pill">♡ Save</span><span class="pill">Share</span><span class="pill">EN ▾</span></div></div>
+
+  <div class="hero">
+    <div class="after"></div><div class="before"></div>
+    <div class="handle"></div><div class="knob">⇆</div>
+    <span class="yr" style="left:14px">2009</span><span class="yr" style="right:14px">2025</span>
+    <span class="cap">Drag to see how this land changed · illustrative</span>
+  </div>
+
+  <h1>Bellandur, Bengaluru</h1>
+  <p class="sub">Checked 14 Oct · 250 m around your pin · demo data</p>
+
+  <div class="banner">
+    <div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.4" stroke-linecap="round"><path d="M12 8v5M12 16.5v.5"/><path d="M10.3 3.9 2.6 17.5A2 2 0 0 0 4.3 20.5h15.4a2 2 0 0 0 1.7-3L13.7 3.9a2 2 0 0 0-3.4 0z"/></svg></div>
+    <div><h2>Be careful with this plot</h2><p>It used to be a lake and the area flooded in 2022. If you're still interested, check the drainage first.</p></div>
+  </div>
+
+  <div class="facts">
+    <div class="fact"><div class="ic" style="background:var(--skySoft)"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#4C86C6" stroke-width="2.2" stroke-linecap="round"><path d="M12 3s6 6.6 6 11a6 6 0 0 1-12 0c0-4.4 6-11 6-11z"/></svg></div><div><h3>It used to be a lake</h3><p>Water stood here for about 30 years, until 2012</p></div><span class="see">See proof ›</span></div>
+    <div class="fact"><div class="ic" style="background:var(--terraSoft)"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#D0603E" stroke-width="2.2" stroke-linecap="round"><path d="M7 15a4 4 0 0 1-.6-8 5.5 5.5 0 0 1 10.7 1.3A3.5 3.5 0 0 1 17 15"/><path d="M9 18l-1 2M13 18l-1 2M17 18l-1 2"/></svg></div><div><h3>It floods in heavy rain</h3><p>Water stood here in 4 of the last 9 monsoons</p></div><span class="see">See proof ›</span></div>
+    <div class="fact"><div class="ic" style="background:var(--sandSoft)"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#C9952F" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 19 9 9l4 6 3-4 5 8z"/></svg></div><div><h3>It sits lower than its neighbours</h3><p>Lower than 8 out of 10 plots around it</p></div><span class="see">See proof ›</span></div>
+  </div>
+
+  <div class="cta"><div style="background:var(--ink);color:#FBF8F3">What should I do? →</div><div style="background:#fff;border:1.5px solid var(--line)">Compare with another</div></div>
+  <p class="trust">✓ Based on 40 years of satellite photos · 10 facts double-checked</p>
+</div>
+<div class="map"><div class="mapin">
+  <div class="ring"></div>
+  <div class="pin"><svg width="40" height="52" viewBox="0 0 32 42"><path d="M16 41s14-13.5 14-25A14 14 0 0 0 2 16c0 11.5 14 25 14 25z" fill="#D0603E" stroke="#fff" stroke-width="2.5"/><circle cx="16" cy="16" r="5.5" fill="#fff"/></svg></div>
+  <div class="chip" style="left:62%;top:64%"><span style="width:10px;height:10px;border-radius:50%;background:#D0603E"></span>Your plot · High risk</div>
+  <div class="chip" style="left:16%;top:18%"><span style="width:10px;height:10px;border-radius:50%;background:#4E8C72"></span>Safer area · 2 km N</div>
+  <div class="mapctl"><span>Satellite</span><span style="opacity:.6">Map</span></div>
+</div></div>
+</body></html>

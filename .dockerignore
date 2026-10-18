@@ -1,0 +1,15 @@
+.git
+.gitignore
+.DS_Store
+**/.DS_Store
+**/.env
+**/.env.*
+**/__pycache__
+**/*.pyc
+backend/.cache
+backend/.pytest_cache
+backend/.venv
+frontend/dist
+frontend/node_modules
+frontend/tsconfig.tsbuildinfo
+design-mockups

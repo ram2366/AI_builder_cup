@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<title>SAMPAAA · Direction B · Precision instrument</title>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{--paper:#F5F4F0;--sheet:#FFFFFF;--ink:#16181D;--ink2:#5B606A;--ink3:#9096A0;--rule:#E3E1DA;--rule2:#CFCCC3;--signal:#E4572E;--water:#3F7CC9;--flood:#7B5EC6}
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{width:1440px;height:900px;display:flex;background:var(--paper);color:var(--ink);font-family:"IBM Plex Sans",sans-serif;-webkit-font-smoothing:antialiased;overflow:hidden}
+  .mono{font-family:"IBM Plex Mono",monospace}
+  .col{width:660px;height:900px;background:var(--sheet);border-right:1px solid var(--rule2);display:flex;flex-direction:column}
+  .bar{display:flex;align-items:center;height:48px;padding:0 24px;border-bottom:1px solid var(--rule);font-size:12px;gap:18px}
+  .bar .logo{font-weight:600;letter-spacing:.18em;font-size:12.5px}
+  .bar .meta{color:var(--ink2)}
+  .bar .act{margin-left:auto;display:flex;gap:16px;color:var(--ink2)}
+  .bar .act span:hover{color:var(--ink)}
+  .tabs{display:flex;padding:0 24px;border-bottom:1px solid var(--rule);font-size:12.5px;color:var(--ink2)}
+  .tabs span{padding:12px 14px 10px}.tabs .on{color:var(--ink);box-shadow:inset 0 -2px 0 var(--ink)}
+  .body{padding:22px 24px;overflow:hidden}
+  .head{display:grid;grid-template-columns:1fr auto;gap:12px;align-items:end}
+  .head h1{font-size:24px;font-weight:600;letter-spacing:-.01em}
+  .head p{font-size:12px;color:var(--ink2);margin-top:4px}
+  .score{text-align:right}
+  .score .v{font-size:30px;font-weight:600;color:var(--signal);letter-spacing:.02em}
+  .meter{display:inline-flex;gap:3px;vertical-align:middle}
+  .meter i{width:14px;height:8px;background:var(--rule)}
+  .meter i.on{background:var(--ink)}
+  .meter.hi i.on{background:var(--signal)}
+  .summary{margin-top:16px;padding:12px 14px;background:#FBF3EF;border-left:3px solid var(--signal);font-size:13.5px;line-height:1.55}
+  table{width:100%;border-collapse:collapse;margin-top:18px;font-size:12.5px}
+  th{text-align:left;font-weight:500;color:var(--ink3);font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;padding:0 8px 8px 0;border-bottom:1px solid var(--ink)}
+  td{padding:10px 8px 10px 0;border-bottom:1px solid var(--rule);vertical-align:middle}
+  td.k{font-weight:500}
+  td.num{font-family:"IBM Plex Mono";font-size:12px}
+  td.src{color:var(--ink3);font-size:11px}
+  .grid2{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:20px}
+  .fig h4{font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink3);font-weight:500;margin-bottom:8px;display:flex;justify-content:space-between}
+  .matrix{display:grid;grid-template-columns:repeat(9,1fr);gap:4px}
+  .matrix div{aspect-ratio:1;background:var(--rule);display:grid;place-items:center;font-family:"IBM Plex Mono";font-size:9.5px;color:var(--ink3)}
+  .matrix .w{background:var(--water);color:#fff}.matrix .f{background:var(--flood);color:#fff}
+  .ledger{margin-top:18px;font-size:12.5px;border-top:1px solid var(--ink)}
+  .ledger div{display:grid;grid-template-columns:34px 1fr auto;gap:8px;padding:8px 0;border-bottom:1px solid var(--rule)}
+  .ledger .id{font-family:"IBM Plex Mono";color:var(--ink3)}
+  .ledger .ref{font-family:"IBM Plex Mono";font-size:10.5px;color:var(--ink3)}
+  .map{flex:1;position:relative;overflow:hidden}
+  .img{position:absolute;inset:0;background:url(assets/plot-wide.jpg) center/cover;filter:grayscale(1) contrast(1.05) brightness(.92)}
+  .frame{position:absolute;inset:18px;border:1px solid rgba(255,255,255,.7)}
+  .ticks{position:absolute;inset:18px;pointer-events:none}
+  .ring{position:absolute;left:58%;top:46%;width:300px;height:300px;margin:-150px 0 0 -150px;border-radius:50%;border:2px solid var(--signal)}
+  .cross{position:absolute;left:58%;top:46%;width:40px;height:40px;margin:-20px 0 0 -20px}
+  .cross::before,.cross::after{content:"";position:absolute;background:var(--signal)}
+  .cross::before{left:19px;top:0;width:2px;height:40px}.cross::after{top:19px;left:0;height:2px;width:40px}
+  .lake{position:absolute;left:47%;top:31%;width:220px;height:170px;border-radius:52% 48% 44% 56%;border:1.5px dashed var(--water);background:rgba(63,124,201,.22)}
+  .callout{position:absolute;background:var(--sheet);border:1px solid var(--ink);font-size:11px;padding:6px 8px;line-height:1.4}
+  .callout b{font-weight:600}
+  .scale{position:absolute;left:40px;bottom:40px;background:var(--sheet);padding:6px 8px;font-family:"IBM Plex Mono";font-size:10.5px;border:1px solid var(--ink)}
+  .scale i{display:block;width:120px;height:5px;margin-top:4px;background:linear-gradient(90deg,var(--ink) 50%,#fff 50%);border:1px solid var(--ink)}
+  .coord{position:absolute;font-family:"IBM Plex Mono";font-size:10px;color:#fff;text-shadow:0 1px 2px #000}
+</style></head><body>
+<div class="col">
+  <div class="bar"><span class="logo">SAMPAAA</span><span class="meta mono">SP-EE6D35 · 14 OCT 2026 · DEMO DATA</span><span class="act"><span>Compare</span><span>Share</span><span>Export PDF ↗</span></span></div>
+  <div class="tabs"><span class="on">Assessment</span><span>Actions</span><span>Timeline</span><span>Ask</span><span>Sources</span></div>
+  <div class="body">
+    <div class="head">
+      <div><h1>Bellandur, Bengaluru East</h1><p class="mono">12.95050 N · 77.70050 E · radius 250 m · 5 checks · 10/10 claims verified</p></div>
+      <div class="score"><div class="v">HIGH</div><span class="meter hi"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i></span></div>
+    </div>
+    <div class="summary"><b>Former seasonal lake, flooded Sep 2022.</b> Water was present on the plot in 46% of observations 1984–2021; the area was filled and built on after 2012.</div>
+
+    <table>
+      <tr><th style="width:34%">Check</th><th>Rating</th><th>Key value</th><th style="width:22%">1984 → 2025</th><th>Conf.</th></tr>
+      <tr><td class="k">Former water body</td><td><span class="meter hi"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i></span></td><td class="num">46% water</td><td><svg width="120" height="22"><path id="s1" fill="none" stroke="#3F7CC9" stroke-width="1.5"/></svg></td><td class="num">●●●</td></tr>
+      <tr><td class="k">Flooding</td><td><span class="meter hi"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i></span></td><td class="num">4/9 monsoons</td><td><svg width="120" height="22"><path id="s2" fill="none" stroke="#7B5EC6" stroke-width="1.5"/></svg></td><td class="num">●●●</td></tr>
+      <tr><td class="k">Low-lying terrain</td><td><span class="meter"><i class="on"></i><i class="on"></i><i class="on"></i><i></i></span></td><td class="num">HAND 2.4 m</td><td class="src">p19 of 2 km area</td><td class="num">●●○</td></tr>
+      <tr><td class="k">Green cover loss</td><td><span class="meter"><i class="on"></i><i class="on"></i><i class="on"></i><i></i></span></td><td class="num">53% → 25%</td><td><svg width="120" height="22"><path id="s3" fill="none" stroke="#16181D" stroke-width="1.5"/></svg></td><td class="num">●●●</td></tr>
+      <tr><td class="k">Heavy rain (regional)</td><td><span class="meter"><i class="on"></i><i class="on"></i><i></i><i></i></span></td><td class="num">3.0 d/yr</td><td class="src">CHIRPS ~5.5 km</td><td class="num">●○○</td></tr>
+    </table>
+
+    <div class="grid2">
+      <div class="fig"><h4><span>Monsoon water, 2017–25</span><span class="mono">S1 · DW</span></h4>
+        <div class="matrix"><div class="w">17</div><div>18</div><div>19</div><div class="w">20</div><div class="w">21</div><div class="f">22</div><div>23</div><div>24</div><div>25</div></div>
+      </div>
+      <div class="fig"><h4><span>Water share inside circle</span><span class="mono">JRC · 30 m</span></h4>
+        <svg width="294" height="44"><path id="area" fill="#3F7CC933" stroke="#3F7CC9" stroke-width="1.2"/></svg>
+      </div>
+    </div>
+
+    <div class="ledger">
+      <div><span class="id">F1</span><span>Radar shows 18% of the area under water on 5 Sep 2022.</span><span class="ref">s1.flooded_fraction</span></div>
+      <div><span class="id">F2</span><span>Classified as lost seasonal water, 1984–2021.</span><span class="ref">jrc.transition</span></div>
+      <div><span class="id">F3</span><span>Lower than 81% of land within 2 km.</span><span class="ref">terrain.lower_than</span></div>
+    </div>
+    <div class="fig" style="margin-top:20px"><h4><span>Recommended actions</span><span class="mono">3 of 6</span></h4>
+      <div class="ledger" style="margin-top:0">
+        <div><span class="id">01</span><span>Visit the site within 24 h of heavy rain.</span><span class="ref">site visit</span></div>
+        <div><span class="id">02</span><span>Ask the builder how the former lake area was filled and compacted.</span><span class="ref">builder</span></div>
+        <div><span class="id">03</span><span>Confirm the plot is outside lake and drain buffer zones.</span><span class="ref">approvals</span></div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="map">
+  <div class="img"></div>
+  <div class="lake"></div>
+  <div class="ring"></div><div class="cross"></div>
+  <div class="frame"></div>
+  <div class="callout" style="left:28%;top:21%"><b>A</b> Lake extent 2009 · JRC</div>
+  <div class="callout" style="left:68%;top:64%"><b>B</b> Plot · flooded 2022</div>
+  <div class="scale">250 m<i></i></div>
+  <span class="coord" style="left:26px;top:24px">12.9480 N</span><span class="coord" style="right:26px;top:24px">77.7120 E</span>
+  <span class="coord" style="left:26px;bottom:24px">12.9150 N</span><span class="coord" style="right:26px;bottom:24px">77.6720 E</span>
+</div>
+<script>
+  const ys=[];for(let y=1984;y<=2025;y++)ys.push(y);
+  const water=ys.map(y=>y<2012?.4+.03*Math.sin(y*.9):y<=2021?Math.max(.03,.42-(y-2011)*.045):y===2022?.12:.025);
+  const spark=(id,vals,w,h,area)=>{const max=Math.max(...vals);let d=vals.map((v,i)=>`${i?'L':'M'}${(i/(vals.length-1)*w).toFixed(1)},${(h-2-(v/max)*(h-6)).toFixed(1)}`).join(' ');if(area)d+=` L${w},${h} L0,${h} Z`;document.getElementById(id).setAttribute('d',d)};
+  spark('s1',water,120,22);
+  spark('s2',[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,1,1,3,0,0,0],120,22);
+  spark('s3',[.53,.5,.45,.41,.37,.33,.3,.28,.26,.25],120,22);
+  spark('area',water,294,44,true);
+</script>
+</body></html>
